@@ -11,10 +11,12 @@
     <None Remove="Data\Articles\sample-with-link-null.json" />
     <None Remove="Data\Articles\sample-without-included.json" />
     <None Remove="Data\Articles\sample.json" />
+    <None Remove="Data\Articles\single-item-unknown-property.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Articles\author-comments-null.json" />
+    <EmbeddedResource Include="Data\Articles\single-item-unknown-property.json" />
     <EmbeddedResource Include="Data\Products\sample-included-first-recursive.json" />
     <EmbeddedResource Include="Data\Articles\sample-with-full-link.json" />
     <EmbeddedResource Include="Data\Articles\sample-without-included.json" />

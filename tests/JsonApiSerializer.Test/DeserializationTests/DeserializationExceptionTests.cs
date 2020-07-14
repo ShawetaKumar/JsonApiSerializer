@@ -108,5 +108,22 @@ namespace JsonApiSerializer.Test.DeserializationTests
 
             Assert.Equal("data", exception.Path);
         }
+
+        [Fact]
+        public void When_passed_unknown_property_should_throw_exception_when_missing_member_handling_set_to_error()
+        {
+            var json = EmbeddedResource.Read("Data.Articles.single-item-unknown-property.json");
+            var settings = new JsonApiSerializerSettings
+            {
+                MissingMemberHandling = MissingMemberHandling.Error
+            };
+
+            var exception = Assert.Throws<JsonApiFormatException>(() => JsonConvert.DeserializeObject<Article>(
+                json,
+                settings));
+
+            Assert.Equal("data", exception.Path);
+        }
+       
     }
 }
